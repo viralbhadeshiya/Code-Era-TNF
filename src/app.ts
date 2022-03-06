@@ -4,10 +4,10 @@ import graceful from 'fastify-graceful-shutdown';
 import helmet from 'fastify-helmet';
 import { IncomingMessage, Server, ServerResponse } from 'http';
 import { v4 as uuidv4 } from 'uuid';
-import Config from './environment/index';
-import routes from './index';
+// import Config from './environment/index';
+// import routes from './index';
 import { externalLogger } from './services/logger';
-import { HttpException } from './utils';
+// import { HttpException } from './utils';
 
 async function app() {
     const fastify: FastifyInstance<Server, IncomingMessage, ServerResponse> = Fastify({
@@ -18,36 +18,36 @@ async function app() {
             return uuidv4();
         },
     });
-    fastify.setErrorHandler((err: HttpException, request: FastifyRequest, reply: FastifyReply) => {
-        let tranceMeta;
-        if (err.meta) {
-            tranceMeta = { ...err.meta, ...{ traceId: request.id } };
-        } else {
-            tranceMeta = { traceId: request.id };
-        }
+    // fastify.setErrorHandler((err: HttpException, request: FastifyRequest, reply: FastifyReply) => {
+    //     let tranceMeta;
+    //     if (err.meta) {
+    //         tranceMeta = { ...err.meta, ...{ traceId: request.id } };
+    //     } else {
+    //         tranceMeta = { traceId: request.id };
+    //     }
 
-        if (err && err.originalError) {
-            request.log.error(err.originalError, `${err.message}`);
-        } else if (err && err.errorCode) {
-            request.log.trace(err, 'EXPLICIT_HANDLE_ERROR');
-        } else {
-            request.log.debug(`Request url: ${request.raw.url}`);
-            request.log.error(err);
-        }
-        if (err && err.statusCode) {
-            reply.status(err.statusCode).send({
-                error: err.errorCode,
-                message: err.message,
-                meta: tranceMeta,
-            });
-        } else {
-            reply.status(500).send({
-                error: 'INTERNAL_SERVER_ERROR',
-                message: 'An unexpected error occurred.',
-                meta: tranceMeta,
-            });
-        }
-    });
+    //     if (err && err.originalError) {
+    //         request.log.error(err.originalError, `${err.message}`);
+    //     } else if (err && err.errorCode) {
+    //         request.log.trace(err, 'EXPLICIT_HANDLE_ERROR');
+    //     } else {
+    //         request.log.debug(`Request url: ${request.raw.url}`);
+    //         request.log.error(err);
+    //     }
+    //     if (err && err.statusCode) {
+    //         reply.status(err.statusCode).send({
+    //             error: err.errorCode,
+    //             message: err.message,
+    //             meta: tranceMeta,
+    //         });
+    //     } else {
+    //         reply.status(500).send({
+    //             error: 'INTERNAL_SERVER_ERROR',
+    //             message: 'An unexpected error occurred.',
+    //             meta: tranceMeta,
+    //         });
+    //     }
+    // });
     await fastify.register(helmet, {
         contentSecurityPolicy: {
             directives: {
@@ -77,23 +77,23 @@ async function app() {
             message: `Route ${request.method}:${request.raw.url} not found`,
         });
     });
-    await fastify.register(routes);
+    // await fastify.register(routes);
 
     // Validate request hook => Enable for auth and set auth token
 
-    fastify.addHook('preHandler', (request, reply, done) => {
-        if (
-            request.headers &&
-            request.headers.authorization &&
-            request.headers.authorization === Config.SCHEDULER_AUTH_SECERET
-        ) {
-            done();
-        } else {
-            reply.status(400).send({
-                status: 'UNAUTHORIZED',
-            });
-        }
-    });
+    // fastify.addHook('preHandler', (request, reply, done) => {
+    //     if (
+    //         request.headers &&
+    //         request.headers.authorization &&
+    //         request.headers.authorization === Config.SCHEDULER_AUTH_SECERET
+    //     ) {
+    //         done();
+    //     } else {
+    //         reply.status(400).send({
+    //             status: 'UNAUTHORIZED',
+    //         });
+    //     }
+    // });
 
     return fastify;
 }
