@@ -9,7 +9,7 @@ const env = cleanEnv(process.env, {
     }),
     NODE_ENV: str({
         default: 'local',
-        choices: ['local', 'development', 'production'],
+        choices: ['local', 'development', 'staging', 'production'],
     }),
     APP_PORT: port({
         default: 4004,
@@ -19,10 +19,15 @@ const env = cleanEnv(process.env, {
         default: 'false',
     }),
     LOCAL: str({
+        desc: 'Local mongodb url',
         default: 'mongodb://localhost:27017/',
     }),
-    SCHEDULER_AUTH_SECERET: str(),
-    BASE_URL: str(),
+    SCHEDULER_AUTH_SECERET: str({
+        desc: 'Auth token to make api call for scheduler',
+    }),
+    BASE_URL: str({
+        desc: 'Host address of current app to make internal call',
+    }),
 });
 
 export default env;

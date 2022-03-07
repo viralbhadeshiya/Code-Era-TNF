@@ -1,5 +1,5 @@
 import deepFreeze from './deep-freeze';
-// import HttpException from './error-utils';
+import HttpException from './error-utils';
 import env from './envValidation';
 
-export { deepFreeze, env };
+export { deepFreeze, env, HttpException };
