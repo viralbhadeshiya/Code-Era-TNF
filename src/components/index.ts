@@ -1,3 +1,3 @@
-// import * as schedulerComponent from './scheduler/index';
+import * as gatewayComponent from './gateway/index';
 
-export { };
+export { gatewayComponent };
