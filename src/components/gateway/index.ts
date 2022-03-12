@@ -1,4 +1,4 @@
-import * as schedulerRoute from './scheduler.routes';
-import * as schedulerController from './scheduler.controller';
+import * as gatewayRoutes from './gateway.routes';
+import * as gatewayController from './gateway.controller';
 
-export { schedulerController, schedulerRoute };
+export { gatewayController, gatewayRoutes };
