@@ -22,9 +22,6 @@ const env = cleanEnv(process.env, {
         desc: 'Local mongodb url',
         default: 'mongodb://localhost:27017/',
     }),
-    SCHEDULER_AUTH_SECERET: str({
-        desc: 'Auth token to make api call for scheduler',
-    }),
     BASE_URL: str({
         desc: 'Host address of current app to make internal call',
     }),
