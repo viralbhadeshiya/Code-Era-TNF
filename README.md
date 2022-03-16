@@ -1,7 +1,6 @@
 # Code-Era-TNF
 Start up fastify app with typescript
 
-
 ## Installation & Configuration
 
 - clone the repository into your local machine after cloning the project do follow these steps
