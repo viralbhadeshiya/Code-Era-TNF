@@ -18,3 +18,12 @@ npm i # (for local setup)
 ```bash
 npm start
 ```
+
+#### API Structure
+
+```
+Routes:
+    ├── /
+    ├── * (OPTIONS)
+    └── home (GET)
+```
