@@ -1,1 +1,65 @@
-{"name":"code-era-tnf","version":"1.0.0","description":"Start up fastify app with typescript","main":"index.js","scripts":{"start":"tsc && node ./lib/server.js","dev":"nodemon --watch './src/**/*.ts' --exec ts-node ./src/server.ts","build":"tsc","test":"jest --watchAll","format":"npx prettier --write \"src/**/*.ts\"","lint":"npx eslint \"{src,apps,libs,test}/**/*.ts\" --fix","prepare":"husky install"},"repository":{"type":"git","url":"git+https://github.com/viralbhadeshiya/Code-Era-TNF.git"},"keywords":[],"author":"","license":"ISC","bugs":{"url":"https://github.com/viralbhadeshiya/Code-Era-TNF/issues"},"homepage":"https://github.com/viralbhadeshiya/Code-Era-TNF#readme","dependencies":{"dotenv":"^16.0.0","envalid":"^7.2.2","fastify":"^3.27.1","fastify-cors":"^6.0.2","fastify-graceful-shutdown":"^3.1.0","fastify-helmet":"^7.0.1","fastify-mongodb":"^4.1.1","mongodb":"^4.3.1","pino":"^7.6.5","uuid":"^8.3.2"},"devDependencies":{"@types/cors":"^2.8.12","@types/jest":"^27.4.0","@types/level":"^6.0.0","@types/node":"^17.0.16","@typescript-eslint/eslint-plugin":"^5.11.0","@typescript-eslint/parser":"^5.11.0","eslint":"^8.8.0","eslint-config-airbnb-base":"^15.0.0","eslint-config-prettier":"^8.3.0","eslint-plugin-import":"^2.25.4","eslint-plugin-prettier":"^4.0.0","husky":"^7.0.0","jest":"^27.5.0","lint-staged":"^12.3.3","pino-pretty":"^7.5.1","prettier":"^2.5.1","ts-jest":"^27.1.3","ts-node":"^10.4.0","typescript":"^4.5.5"},"lint-staged":{"src/**/*.ts":["npm run format","npm run lint"]}}
+{
+    "name": "code-era-tnf",
+    "version": "1.0.0",
+    "description": "Start up fastify app with typescript",
+    "main": "index.js",
+    "scripts": {
+        "start": "tsc && node ./lib/server.js",
+        "dev": "nodemon --watch './src/**/*.ts' --exec ts-node ./src/server.ts",
+        "build": "tsc",
+        "test": "jest --watchAll",
+        "format": "npx prettier --write \"src/**/*.ts\"",
+        "lint": "npx eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+        "prepare": "husky install"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/viralbhadeshiya/Code-Era-TNF.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/viralbhadeshiya/Code-Era-TNF/issues"
+    },
+    "homepage": "https://github.com/viralbhadeshiya/Code-Era-TNF#readme",
+    "dependencies": {
+        "dotenv": "^16.0.0",
+        "envalid": "^7.2.2",
+        "fastify": "^3.27.1",
+        "fastify-cors": "^6.0.2",
+        "fastify-graceful-shutdown": "^3.1.0",
+        "fastify-helmet": "^7.0.1",
+        "fastify-mongodb": "^4.1.1",
+        "mongodb": "^4.3.1",
+        "pino": "^7.6.5",
+        "uuid": "^8.3.2"
+    },
+    "devDependencies": {
+        "@types/cors": "^2.8.12",
+        "@types/jest": "^27.4.0",
+        "@types/level": "^6.0.0",
+        "@types/node": "^17.0.16",
+        "@typescript-eslint/eslint-plugin": "^5.11.0",
+        "@typescript-eslint/parser": "^5.11.0",
+        "eslint": "^8.8.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-import": "^2.25.4",
+        "eslint-plugin-prettier": "^4.0.0",
+        "husky": "^7.0.0",
+        "jest": "^27.5.0",
+        "lint-staged": "^12.3.3",
+        "pino-pretty": "^7.5.1",
+        "prettier": "^2.5.1",
+        "ts-jest": "^27.1.3",
+        "ts-node": "^10.4.0",
+        "typescript": "^4.5.5"
+    },
+    "lint-staged": {
+        "src/**/*.ts": [
+            "npm run format",
+            "npm run lint"
+        ]
+    }
+}

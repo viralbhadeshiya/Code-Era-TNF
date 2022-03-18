@@ -1,6 +1,13 @@
 # Code-Era-TNF
 Start up fastify app with typescript
 
+## Tech Used
+
+-   [Node JS @ 16.x](https://nodejs.org/en/)
+-   [Mongo DB @ 4.4.x](https://www.mongodb.com/)
+-   [NPM @ 8.5.x](https://www.npmjs.com/)
+-   [Fastify @ 3.27.x](https://www.fastify.io/)
+
 ## Installation & Configuration
 
 - clone the repository into your local machine after cloning the project do follow these steps
