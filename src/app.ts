@@ -5,7 +5,7 @@ import helmet from 'fastify-helmet';
 import { IncomingMessage, Server, ServerResponse } from 'http';
 import { v4 as uuidv4 } from 'uuid';
 import Config from './environment/index';
-// import routes from './index';
+import routes from './index';
 import { externalLogger } from './services/logger';
 import { HttpException } from './utils';
 
@@ -77,7 +77,7 @@ async function app() {
             message: `Route ${request.method}:${request.raw.url} not found`,
         });
     });
-    // await fastify.register(routes);
+    await fastify.register(routes);
 
     // Validate request hook => Enable for auth and set auth token
     fastify.addHook('preHandler', (request, reply, done) => {
